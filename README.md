@@ -1,2 +1,2 @@
-# SHAROJ KUMAR Portfolio
+# SHAROJ KUMAR
 Upload to GitHub Pages.
