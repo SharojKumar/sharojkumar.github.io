@@ -5,22 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHAROJ KUMAR | Portfolio</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#000;
-color:#fff;
+background:#0d0d0d;
+color:white;
 }
 
 .container{
 display:flex;
-height:100vh;
+min-height:100vh;
 }
 
 .left{
@@ -29,66 +33,133 @@ background:#111;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:40px;
 }
 
 .left img{
-width:80%;
-border-radius:15px;
+width:320px;
+height:420px;
+object-fit:cover;
+border-radius:20px;
+border:4px solid gold;
+box-shadow:0 0 30px rgba(255,215,0,.4);
 }
 
 .right{
 width:60%;
+padding:70px;
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding:60px;
 }
 
-h1{
+.right h1{
 font-size:60px;
+font-weight:700;
 }
 
-h2{
-margin-top:15px;
-color:#FFD700;
+.right h2{
+margin-top:10px;
+color:gold;
+font-size:28px;
 }
 
-p{
+.right p{
 margin-top:25px;
 font-size:18px;
-line-height:30px;
-color:#ccc;
+line-height:32px;
+color:#ddd;
 }
 
 .btn{
 display:inline-block;
-margin-top:35px;
-padding:15px 35px;
-background:#FFD700;
-color:#000;
+margin-top:30px;
+padding:15px 40px;
+background:gold;
+color:black;
 text-decoration:none;
-border-radius:8px;
 font-weight:bold;
+border-radius:8px;
+transition:.3s;
 }
 
-@media(max-width:768px){
+.btn:hover{
+background:white;
+}
+
+section{
+padding:80px;
+}
+
+.title{
+font-size:40px;
+color:gold;
+margin-bottom:30px;
+}
+
+.card{
+background:#161616;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+border-left:5px solid gold;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill{
+background:#1d1d1d;
+padding:20px;
+text-align:center;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
+}
+
+.skill:hover{
+background:gold;
+color:black;
+transform:translateY(-5px);
+}
+@media(max-width:900px){
+
 .container{
 flex-direction:column;
-height:auto;
 }
 
-.left,.right{
+.left,
+.right{
 width:100%;
 }
 
 .right{
-padding:30px;
+padding:40px 25px;
+text-align:center;
 }
 
-h1{
-font-size:40px;
+.right h1{
+font-size:42px;
 }
+
+.right h2{
+font-size:22px;
 }
+
+.left img{
+width:260px;
+height:340px;
+}
+
+section{
+padding:50px 25px;
+}
+
+}
+
 </style>
 
 </head>
@@ -98,7 +169,7 @@ font-size:40px;
 <div class="container">
 
 <div class="left">
-<img src="profile.jpg" alt="Profile">
+<img src="profile.jpg" alt="SHAROJ KUMAR">
 </div>
 
 <div class="right">
@@ -108,7 +179,10 @@ font-size:40px;
 <h2>IT / NETWORK SUPPORT & CCTV ENGINEER</h2>
 
 <p>
-Welcome to my professional portfolio website.
+Experienced IT Professional specializing in Network Support,
+CCTV Surveillance, IP Camera Installation,
+Technical Support and Infrastructure Maintenance.
+Dedicated to delivering secure, reliable and efficient technology solutions.
 </p>
 
 <a href="#" class="btn">Download Resume</a>
@@ -116,6 +190,109 @@ Welcome to my professional portfolio website.
 </div>
 
 </div>
+
+<section>
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+
+<p>
+
+I am an IT / Network Support & CCTV Engineer with practical experience in
+network troubleshooting, CCTV systems, IP camera configuration,
+PoE switches, structured cabling, fiber optic connectivity,
+NVR/DVR management and technical support.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">IT Support</div>
+
+<div class="skill">Network Support</div>
+
+<div class="skill">CCTV Installation</div>
+
+<div class="skill">IP Cameras</div>
+
+<div class="skill">NVR / DVR</div>
+
+<div class="skill">Fiber Optic</div>
+
+<div class="skill">PoE Switches</div>
+
+<div class="skill">Windows Support</div>
+
+<div class="skill">Technical Troubleshooting</div>
+
+<div class="skill">Structured Cabling</div>
+
+</div>
+
+</section>
+<section>
+
+<h2 class="title">Contact</h2>
+
+<div class="card">
+
+<p><strong>📍 Location:</strong> India</p>
+<p><strong>📧 Email:</strong> sharojkumar007@gmail.com</p>
+<p><strong>📞 Phone:</strong> +91 87544 40447</p>
+
+<br>
+
+<p>
+<strong>🌐 GitHub:</strong><br>
+<a href="https://github.com/SharojKumar" target="_blank" style="color:gold;">
+https://github.com/SharojKumar
+</a>
+</p>
+
+<br>
+
+<p>
+<strong>💼 LinkedIn:</strong><br>
+<a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" style="color:gold;">
+linkedin.com/in/sharojkumar007
+</a>
+</p>
+
+<br>
+
+<p>
+<strong>📷 Instagram:</strong><br>
+<a href="https://www.instagram.com/mrblack_sk" target="_blank" style="color:gold;">
+@mrblack_sk
+</a>
+</p>
+
+</div>
+
+</section>
+
+<footer style="background:#111;padding:30px;text-align:center;margin-top:50px;">
+
+<h3 style="color:gold;">SHAROJ KUMAR</h3>
+
+<p style="margin-top:10px;">
+IT / NETWORK SUPPORT & CCTV ENGINEER
+</p>
+
+<p style="margin-top:15px;color:#888;">
+© 2026 SHAROJ KUMAR. All Rights Reserved.
+</p>
+
+</footer>
 
 </body>
 </html>
