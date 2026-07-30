@@ -1,516 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHAROJ KUMAR | Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#0d0d0d;
-color:white;
-}
-
-.container{
-display:flex;
-min-height:100vh;
-}
-
-.left{
-width:40%;
-background:#111;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:40px;
-}
-
-.left img{
-width:320px;
-height:420px;
-object-fit:cover;
-border-radius:20px;
-border:4px solid gold;
-box-shadow:0 0 30px rgba(255,215,0,.4);
-}
-
-.right{
-width:60%;
-padding:70px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.right h1{
-font-size:60px;
-font-weight:700;
-}
-
-.right h2{
-margin-top:10px;
-color:gold;
-font-size:28px;
-}
-
-.right p{
-margin-top:25px;
-font-size:18px;
-line-height:32px;
-color:#ddd;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 40px;
-background:gold;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-transition:.3s;
-}
-
-.btn:hover{
-background:white;
-}
-
-section{
-padding:80px;
-}
-
-.title{
-font-size:40px;
-color:gold;
-margin-bottom:30px;
-}
-
-.card{
-background:#161616;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
-border-left:5px solid gold;
-}
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.skill{
-background:#1d1d1d;
-padding:20px;
-text-align:center;
-border-radius:12px;
-font-weight:600;
-transition:.3s;
-}
-
-.skill:hover{
-background:gold;
-color:black;
-transform:translateY(-5px);
-}
-@media(max-width:900px){
-
-.container{
-flex-direction:column;
-}
-
-.left,
-.right{
-width:100%;
-}
-
-.right{
-padding:40px 25px;
-text-align:center;
-}
-
-.right h1{
-font-size:42px;
-}
-
-.right h2{
-font-size:22px;
-}
-
-.left img{
-width:260px;
-height:340px;
-}
-
-section{
-padding:50px 25px;
-}
-.left img{
-    width:260px;
-    height:330px;
-    object-fit:cover;
-}
-
-.right h1{
-    font-size:38px;
-}
-
-.right h2{
-    font-size:20px;
-}
-
-.right p{
-    font-size:15px;
-    line-height:1.6;
-}
-
-.skills{
-    grid-template-columns:1fr;
-}
-
-.card{
-    width:100%;
-}
-
-button,
-a{
-    max-width:100%;
-}
-}
-.visitor-counter{
-    margin-top:20px;
-    text-align:center;
-    color:gold;
-    font-size:18px;
-}
-
-.visitor-counter img{
-    margin-top:10px;
-}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sharoj Kumar — IT, Network Support and CCTV Engineer.">
+  <title>Sharoj Kumar | IT & Network Support Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    :root { --ink:#e9eff7; --muted:#9cabbb; --navy:#07111f; --panel:#0d1b2a; --panel-2:#10243a; --line:rgba(174,205,234,.14); --accent:#47d7ac; --accent-dark:#06251e; }
+    * { box-sizing:border-box; margin:0; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--navy); color:var(--ink); font-family:Manrope, sans-serif; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1140px, calc(100% - 40px)); margin:auto; }
+    .nav { position:sticky; top:0; z-index:20; background:rgba(7,17,31,.86); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-family:"Space Grotesk",sans-serif; font-weight:700; letter-spacing:.03em; font-size:1.1rem; }
+    .brand span { color:var(--accent); }
+    .nav-links { list-style:none; display:flex; gap:26px; color:var(--muted); font-size:.9rem; font-weight:700; }
+    .nav-links a:hover { color:var(--accent); }
+    .menu { display:none; background:transparent; border:0; color:var(--ink); font-size:1.3rem; cursor:pointer; }
+    .hero { min-height:calc(100vh - 72px); display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; padding:80px 0; }
+    .eyebrow { color:var(--accent); font-size:.79rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; }
+    h1,h2,h3 { font-family:"Space Grotesk",sans-serif; line-height:1.12; }
+    h1 { font-size:clamp(3rem,7vw,5.6rem); letter-spacing:-.065em; max-width:700px; }
+    .hero h1 em { color:var(--accent); font-style:normal; }
+    .role { min-height:32px; color:#bdcde0; font-family:"Space Grotesk",sans-serif; font-size:clamp(1.05rem,2vw,1.35rem); margin:22px 0 18px; }
+    .cursor { display:inline-block; width:2px; height:1em; background:var(--accent); vertical-align:-.08em; margin-left:4px; animation:blink .75s step-end infinite; }
+    @keyframes blink { 50% { opacity:0; } }
+    .intro { max-width:650px; color:var(--muted); font-size:1.03rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:32px; }
+    .button { display:inline-flex; align-items:center; gap:9px; border:1px solid var(--accent); border-radius:8px; padding:13px 19px; font-weight:800; font-size:.9rem; transition:.2s ease; }
+    .button.primary { background:var(--accent); color:#052019; }
+    .button:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(71,215,172,.19); }
+    .button.secondary { color:var(--accent); }
+    .hero-card { position:relative; max-width:390px; justify-self:end; width:100%; }
+    .hero-card::before { content:""; position:absolute; inset:-18px 20px 24px -18px; border:1px solid rgba(71,215,172,.32); border-radius:22px; z-index:-1; }
+    .portrait { aspect-ratio:4/5; overflow:hidden; border-radius:18px; background:linear-gradient(145deg,#1b4b58,#0d1b2a 58%,#1b765b); border:1px solid rgba(255,255,255,.12); display:grid; place-items:center; }
+    .portrait img { width:100%; height:100%; object-fit:cover; display:block; }
+    .portrait-fallback { font-family:"Space Grotesk",sans-serif; font-size:6rem; font-weight:700; color:rgba(255,255,255,.87); }
+    .availability { position:absolute; bottom:20px; left:-25px; background:#eafcf6; color:#0d352b; border-radius:10px; padding:10px 13px; box-shadow:0 12px 28px rgba(0,0,0,.25); font-size:.78rem; font-weight:800; }
+    .availability i { color:#18ab76; margin-right:5px; }
+    section { padding:104px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:42px; }
+    .section-head h2 { font-size:clamp(2.1rem,4vw,3.3rem); letter-spacing:-.05em; margin-top:9px; }
+    .section-copy { max-width:500px; color:var(--muted); }
+    .about-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:28px; }
+    .panel { background:linear-gradient(140deg,rgba(19,45,71,.9),rgba(10,26,43,.92)); border:1px solid var(--line); border-radius:14px; padding:30px; }
+    .panel p { color:var(--muted); }
+    .facts { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+    .fact { padding:26px; background:var(--panel); }
+    .fact i { color:var(--accent); font-size:1.2rem; margin-bottom:14px; }
+    .fact strong { display:block; font-size:.93rem; }
+    .fact span { display:block; font-size:.83rem; color:var(--muted); margin-top:3px; }
+    .skills { display:grid; grid-template-columns:repeat(5,1fr); gap:13px; }
+    .skill { min-height:140px; padding:21px; background:var(--panel); border:1px solid var(--line); border-radius:12px; display:flex; flex-direction:column; justify-content:space-between; transition:.22s ease; }
+    .skill:hover { border-color:var(--accent); background:var(--panel-2); transform:translateY(-5px); }
+    .skill i { color:var(--accent); font-size:1.35rem; }
+    .skill span { font-weight:800; line-height:1.3; }
+    .projects { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .project { padding:32px; background:var(--panel); border:1px solid var(--line); border-radius:14px; position:relative; overflow:hidden; }
+    .project::after { content:""; width:120px; height:120px; position:absolute; right:-45px; top:-45px; background:radial-gradient(circle,rgba(71,215,172,.2),transparent 68%); }
+    .project-icon { color:var(--accent); font-size:1.35rem; margin-bottom:38px; }
+    .project h3 { font-size:1.3rem; margin-bottom:11px; }
+    .project p { color:var(--muted); font-size:.94rem; }
+    .contact { background:linear-gradient(120deg,#0d2b30,#0d1b2a); border-top:1px solid var(--line); }
+    .contact-grid { display:grid; grid-template-columns:1fr .9fr; gap:40px; align-items:start; }
+    .contact h2 { font-size:clamp(2.3rem,4vw,3.5rem); letter-spacing:-.06em; margin:10px 0 18px; }
+    .contact p { color:#b6c9d1; max-width:580px; }
+    .contact-cards { display:grid; gap:11px; }
+    .contact-card { padding:16px 18px; display:flex; align-items:center; gap:14px; border-radius:10px; background:rgba(5,17,31,.5); border:1px solid rgba(255,255,255,.11); }
+    .contact-card i { width:20px; color:var(--accent); text-align:center; }
+    .contact-card div { min-width:0; }
+    .contact-card small { display:block; color:#95aeb8; font-weight:700; font-size:.72rem; }
+    .contact-card a, .contact-card span { font-weight:700; word-break:break-word; }
+    footer { padding:27px 0; color:var(--muted); font-size:.84rem; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+    .social { display:flex; gap:10px; }
+    .social a { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); transition:.2s; }
+    .social a:hover { color:var(--accent); border-color:var(--accent); }
+    .whatsapp { position:fixed; right:24px; bottom:24px; width:54px; height:54px; display:grid; place-items:center; border-radius:50%; background:#25d366; color:#fff; font-size:1.65rem; box-shadow:0 10px 26px rgba(0,0,0,.34); z-index:15; transition:.2s; }
+    .whatsapp:hover { transform:scale(1.08); }
+    @media (max-width:850px) { .hero { grid-template-columns:1fr; gap:45px; padding:62px 0 76px; } .hero-card { justify-self:start; max-width:310px; order:-1; } .about-grid,.contact-grid { grid-template-columns:1fr; } .skills { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:600px) { .shell { width:min(100% - 32px,1140px); } .nav-inner { min-height:64px; } .menu { display:block; } .nav-links { display:none; position:absolute; left:16px; right:16px; top:60px; flex-direction:column; gap:0; padding:9px 18px; background:#0b1929; border:1px solid var(--line); border-radius:10px; } .nav-links.open { display:flex; } .nav-links a { display:block; padding:12px 0; } .hero { min-height:auto; } h1 { font-size:3.15rem; } section { padding:74px 0; } .section-head { display:block; margin-bottom:29px; } .section-copy { margin-top:15px; } .skills { grid-template-columns:repeat(2,1fr); } .skill { min-height:118px; } .projects { grid-template-columns:1fr; } .facts { grid-template-columns:1fr; } .availability { left:-9px; bottom:14px; } .footer-inner { flex-direction:column; align-items:flex-start; } }
+  </style>
 </head>
-
 <body>
-
-<div class="container">
-
-<div class="left">
-<img src="profile.jpg" alt="SHAROJ KUMAR">
-</div>
-
-<div class="right">
-
-<h1>SHAROJ KUMAR</h1>
-
-<h2>
-<span id="typing"></span>
-</h2>
-
-<p>
-Experienced IT Professional specializing in Network Support,
-CCTV Surveillance, IP Camera Installation,
-Technical Support and Infrastructure Maintenance.
-Dedicated to delivering secure, reliable and efficient technology solutions.
-</p>
-
-<a href="https://sharojkumar.github.io/SK_RESUME.pdf"
-   target="_blank"
-   style="
-   display:inline-block;
-   background:gold;
-   color:black;
-   padding:15px 40px;
-   text-decoration:none;
-   border-radius:8px;
-   font-weight:bold;">
-   📄 Download Resume
-</a>
-
-</div>
-
-</div>
-
-<section>
-
-<h2 class="title">About Me</h2>
-
-<div class="card">
-
-<p>
-
-I am an IT / Network Support & CCTV Engineer with practical experience in
-network troubleshooting, CCTV systems, IP camera configuration,
-PoE switches, structured cabling, fiber optic connectivity,
-NVR/DVR management and technical support.
-
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Skills</h2>
-
-<div class="skills">
-
-<div class="skill">IT Support</div>
-
-<div class="skill">Network Support</div>
-
-<div class="skill">CCTV Installation</div>
-
-<div class="skill">IP Cameras</div>
-
-<div class="skill">NVR / DVR</div>
-
-<div class="skill">Fiber Optic</div>
-
-<div class="skill">PoE Switches</div>
-
-<div class="skill">Windows Support</div>
-
-<div class="skill">Technical Troubleshooting</div>
-
-<div class="skill">Structured Cabling</div>
-
-</div>
-</section>
-
-<section id="projects" style="padding:80px;background:#111;color:white;">
-
-<h2 style="color:#FFD700;font-size:48px;margin-bottom:40px;">Projects</h2>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;">
-
-<div style="background:#1f1f1f;padding:25px;border-radius:15px;">
-<h3 style="color:#FFD700;">📹 CCTV Installation</h3>
-<p>Installation and configuration of IP CCTV cameras, NVR/DVR systems, PoE switches and surveillance networks.</p>
-</div>
-
-<div style="background:#1f1f1f;padding:25px;border-radius:15px;">
-<h3 style="color:#FFD700;">🌐 Network Infrastructure</h3>
-<p>LAN setup, Router & Switch configuration, Structured Cabling, VLAN and Network Troubleshooting.</p>
-</div>
-
-<div style="background:#1f1f1f;padding:25px;border-radius:15px;">
-<h3 style="color:#FFD700;">⚡ Fiber Optic</h3>
-<p>Fiber optic cable installation, testing, maintenance and connectivity for enterprise networks.</p>
-</div>
-
-<div style="background:#1f1f1f;padding:25px;border-radius:15px;">
-<h3 style="color:#FFD700;">🖥️ Technical Support</h3>
-<p>Windows installation, system maintenance, printer support and IT troubleshooting.</p>
-</div>
-
-<section>
-
-<h2 class="title">Contact</h2>
-
-<div class="card">
-
-<p><strong>📍 Location:</strong> India</p>
-<p><strong>📧 Email:</strong> sharojkumar007@gmail.com</p>
-<p><strong>📞 Phone:</strong> +91 87544 40447</p>
-
-<br>
-
-<p>
-<strong>🌐 GitHub:</strong><br>
-<a href="https://github.com/SharojKumar" target="_blank" style="color:gold;">
-https://github.com/SharojKumar
-</a>
-</p>
-
-<br>
-
-<p>
-<strong>💼 LinkedIn:</strong><br>
-<a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" style="color:gold;">
-linkedin.com/in/sharojkumar007
-</a>
-</p>
-
-<br>
-
-<p>
-<strong>📷 Instagram:</strong><br>
-<a href="https://www.instagram.com/mrblack_sk" target="_blank" style="color:gold;">
-@mrblack_sk
-</a>
-</p>
-<br>
-
-<p>
-<strong>📧 Email:</strong><br>
-<a href="mailto:sharojkumar007@gmail.com" style="color:gold;">
-sharojkumar007@gmail.com
-</a>
-<br>
-
-<strong>📍 Location:</strong><br>
-
-<a href="https://maps.app.goo.gl/NUKxEV9Hx2hoXhxQ9" 
-target="_blank"
-style="color:gold;font-size:18px;">
-
-Open Google Map Location
-
-</a>
-
-<br>
-
-<br>
-
-<p>
-<strong>🌐 Social:</strong>
-</p>
-
-<div class="social-icons">
-
-<a href="https://github.com/SharojKumar" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/sharojkumar007" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="https://instagram.com/mrblack_sk" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://wa.me/918754440447" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-</div>
-
-</p>
-</section>
-
-<footer style="background:#111;padding:30px;text-align:center;margin-top:50px;">
-</section>
-
-
-
-<footer style="background:#111;padding:30px;text-align:center;margin-top:50px;">
-<h3 style="color:gold;">SHAROJ KUMAR</h3>
-
-<p style="margin-top:10px;">
-IT / NETWORK SUPPORT & CCTV ENGINEER
-</p>
-
-<p style="margin-top:15px;color:#888;">
-© 2026 MR.BLACK. All Rights Reserved.
-</p>
-<div class="visitor-counter">
-
-👁️ Visitors:
-<br>
-
-<img src="https://visitor-badge.laobi.icu/badge?page_id=SharojKumar.sharojkumar.github.io" 
-alt="visitor counter">
-<div class="visitor-counter">
-
-</div>
-</footer>
-<!-- WhatsApp Floating Button -->
-</footer>
-
-</div>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/918754440447" 
-target="_blank" 
-class="whatsapp-btn">
-
-💬
-
-</a>
-
-<style>
-
-.whatsapp-btn{
-position:fixed;
-right:25px;
-bottom:25px;
-width:60px;
-height:60px;
-background:#25D366;
-color:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-z-index:999;
-}
-
-.whatsapp-btn:hover{
-transform:scale(1.1);
-}
-
-</style>
-<script>
-
-const text = [
-"IT / NETWORK SUPPORT & CCTV ENGINEER",
-"CCTV Surveillance Specialist",
-"Network Support Engineer",
-"IP Camera & Infrastructure Expert"
-];
-
-let i = 0;
-let j = 0;
-let isDeleting = false;
-
-function typeEffect(){
-
-let current = text[i];
-
-if(!isDeleting){
-document.getElementById("typing").innerHTML =
-current.substring(0,j++);
-}
-else{
-document.getElementById("typing").innerHTML =
-current.substring(0,j--);
-}
-
-if(j == current.length){
-isDeleting = true;
-setTimeout(typeEffect,1000);
-return;
-}
-
-if(j == 0){
-isDeleting = false;
-i = (i+1)%text.length;
-}
-
-setTimeout(typeEffect,100);
-
-}
-
-typeEffect();
-
-</script>
+  <header class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#home">SHAROJ<span>.</span></a>
+      <button class="menu" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero" id="home">
+      <div>
+        <p class="eyebrow">IT infrastructure & surveillance</p>
+        <h1>Keeping your <em>technology</em> connected.</h1>
+        <p class="role"><span id="typing">IT / Network Support Engineer</span><span class="cursor"></span></p>
+        <p class="intro">I’m Sharoj Kumar, an IT professional focused on reliable networks, CCTV surveillance, IP camera systems and practical technical support.</p>
+        <div class="actions">
+          <a class="button primary" href="SK_RESUME.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> Download résumé</a>
+          <a class="button secondary" href="#contact">Let’s connect <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="portrait"><img src="profile.jpg" alt="Portrait of Sharoj Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="portrait-fallback" style="display:none">SK</span></div>
+        <div class="availability"><i class="fa-solid fa-circle"></i> Available for opportunities</div>
+      </div>
+    </section>
+
+    <section id="about"><div class="shell">
+      <div class="section-head"><div><p class="eyebrow">01 — About</p><h2>Hands-on support for essential systems.</h2></div><p class="section-copy">I help organisations keep their networks, security systems and day-to-day IT operations dependable.</p></div>
+      <div class="about-grid"><div class="panel"><p>I am an IT / Network Support & CCTV Engineer with practical experience in network troubleshooting, CCTV systems, IP camera configuration, PoE switches, structured cabling, fibre optic connectivity, NVR/DVR management and technical support.</p><br><p>My focus is simple: secure, reliable and efficient technology solutions that work when people need them.</p></div><div class="facts"><div class="fact"><i class="fa-solid fa-network-wired"></i><strong>Network support</strong><span>LAN, routers, switches & troubleshooting</span></div><div class="fact"><i class="fa-solid fa-video"></i><strong>CCTV systems</strong><span>IP cameras, NVR/DVR & surveillance</span></div><div class="fact"><i class="fa-solid fa-ethernet"></i><strong>Connectivity</strong><span>Structured cabling & fibre optics</span></div><div class="fact"><i class="fa-solid fa-screwdriver-wrench"></i><strong>Technical support</strong><span>Windows, printers & maintenance</span></div></div></div>
+    </div></section>
+
+    <section id="skills"><div class="shell">
+      <div class="section-head"><div><p class="eyebrow">02 — Expertise</p><h2>Skills I bring to the field.</h2></div></div>
+      <div class="skills"><div class="skill"><i class="fa-solid fa-headset"></i><span>IT Support</span></div><div class="skill"><i class="fa-solid fa-network-wired"></i><span>Network Support</span></div><div class="skill"><i class="fa-solid fa-video"></i><span>CCTV Installation</span></div><div class="skill"><i class="fa-solid fa-camera"></i><span>IP Cameras</span></div><div class="skill"><i class="fa-solid fa-hard-drive"></i><span>NVR / DVR</span></div><div class="skill"><i class="fa-solid fa-tower-broadcast"></i><span>Fibre Optic</span></div><div class="skill"><i class="fa-solid fa-toggle-on"></i><span>PoE Switches</span></div><div class="skill"><i class="fa-brands fa-windows"></i><span>Windows Support</span></div><div class="skill"><i class="fa-solid fa-wrench"></i><span>Troubleshooting</span></div><div class="skill"><i class="fa-solid fa-plug-circle-bolt"></i><span>Structured Cabling</span></div></div>
+    </div></section>
+
+    <section id="projects"><div class="shell">
+      <div class="section-head"><div><p class="eyebrow">03 — Work areas</p><h2>Solutions that keep work moving.</h2></div><p class="section-copy">A snapshot of the systems and services I support.</p></div>
+      <div class="projects"><article class="project"><i class="project-icon fa-solid fa-video"></i><h3>CCTV installation</h3><p>Installation and configuration of IP CCTV cameras, NVR/DVR systems, PoE switches and surveillance networks.</p></article><article class="project"><i class="project-icon fa-solid fa-network-wired"></i><h3>Network infrastructure</h3><p>LAN setup, router and switch configuration, structured cabling, VLANs and network troubleshooting.</p></article><article class="project"><i class="project-icon fa-solid fa-tower-broadcast"></i><h3>Fibre optic connectivity</h3><p>Fibre optic cable installation, testing, maintenance and connectivity for enterprise networks.</p></article><article class="project"><i class="project-icon fa-solid fa-desktop"></i><h3>Technical support</h3><p>Windows installation, system maintenance, printer support and responsive IT troubleshooting.</p></article></div>
+    </div></section>
+
+    <section class="contact" id="contact"><div class="shell contact-grid">
+      <div><p class="eyebrow">04 — Contact</p><h2>Have a system that needs support?</h2><p>Get in touch for IT, networking and CCTV-related opportunities or enquiries.</p><div class="actions"><a class="button primary" href="mailto:sharojkumar007@gmail.com"><i class="fa-solid fa-paper-plane"></i> Send an email</a></div></div>
+      <div class="contact-cards"><div class="contact-card"><i class="fa-solid fa-envelope"></i><div><small>EMAIL</small><a href="mailto:sharojkumar007@gmail.com">sharojkumar007@gmail.com</a></div></div><div class="contact-card"><i class="fa-solid fa-phone"></i><div><small>PHONE / WHATSAPP</small><a href="https://wa.me/918754440447" target="_blank" rel="noopener">+91 87544 40447</a></div></div><div class="contact-card"><i class="fa-solid fa-location-dot"></i><div><small>LOCATION</small><a href="https://maps.app.goo.gl/NUKxEV9Hx2hoXhxQ9" target="_blank" rel="noopener">India</a></div></div><div class="contact-card"><i class="fa-brands fa-linkedin-in"></i><div><small>LINKEDIN</small><a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" rel="noopener">linkedin.com/in/sharojkumar007</a></div></div></div>
+    </div></section>
+  </main>
+  <footer><div class="shell footer-inner"><span>© <span id="year"></span> Sharoj Kumar. All rights reserved.</span><div class="social"><a href="https://github.com/SharojKumar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://instagram.com/mrblack_sk" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div></footer>
+  <a class="whatsapp" href="https://wa.me/918754440447" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script>
+    const roles = ['IT / Network Support Engineer', 'CCTV Surveillance Specialist', 'IP Camera & Infrastructure Expert'];
+    const typing = document.getElementById('typing'); let role = 0, char = 0, erasing = false;
+    function typeRole() { const word = roles[role]; typing.textContent = erasing ? word.slice(0, --char) : word.slice(0, ++char); let delay = erasing ? 35 : 70; if (!erasing && char === word.length) { delay = 1700; erasing = true; } else if (erasing && char === 0) { erasing = false; role = (role + 1) % roles.length; delay = 350; } setTimeout(typeRole, delay); }
+    setTimeout(typeRole, 900);
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menu = document.querySelector('.menu'), links = document.querySelector('.nav-links'); menu.addEventListener('click', () => { const open = links.classList.toggle('open'); menu.setAttribute('aria-expanded', open); }); document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  </script>
 </body>
 </html>
