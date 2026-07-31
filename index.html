@@ -1,151 +1,1292 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sharoj Kumar — IT, Network Support and CCTV Engineer.">
-  <title>Sharoj Kumar | IT & Network Support Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <style>
-    :root { --ink:#f6f1e4; --muted:#b9b2a3; --navy:#080808; --panel:#121212; --panel-2:#1a1814; --line:rgba(236,196,80,.18); --accent:#e8bd45; --accent-dark:#2a1d00; }
-    * { box-sizing:border-box; margin:0; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--navy); color:var(--ink); font-family:Manrope, sans-serif; line-height:1.65; }
-    a { color:inherit; text-decoration:none; }
-    .shell { width:min(1140px, calc(100% - 40px)); margin:auto; }
-    .nav { position:sticky; top:0; z-index:20; background:rgba(8,8,8,.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
-    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; }
-    .brand { font-family:"Space Grotesk",sans-serif; font-weight:700; letter-spacing:.03em; font-size:1.1rem; }
-    .brand span { color:var(--accent); }
-    .nav-links { list-style:none; display:flex; gap:26px; color:var(--muted); font-size:.9rem; font-weight:700; }
-    .nav-links a:hover { color:var(--accent); }
-    .menu { display:none; background:transparent; border:0; color:var(--ink); font-size:1.3rem; cursor:pointer; }
-    .hero { min-height:calc(100vh - 72px); display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; padding:80px 0; }
-    .eyebrow { color:var(--accent); font-size:.79rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; }
-    h1,h2,h3 { font-family:"Space Grotesk",sans-serif; line-height:1.12; }
-    h1 { font-size:clamp(3rem,7vw,5.6rem); letter-spacing:-.065em; max-width:700px; }
-    .hero h1 em { color:var(--accent); font-style:normal; }
-    .role { min-height:32px; color:#bdcde0; font-family:"Space Grotesk",sans-serif; font-size:clamp(1.05rem,2vw,1.35rem); margin:22px 0 18px; }
-    .cursor { display:inline-block; width:2px; height:1em; background:var(--accent); vertical-align:-.08em; margin-left:4px; animation:blink .75s step-end infinite; }
-    @keyframes blink { 50% { opacity:0; } }
-    .intro { max-width:650px; color:var(--muted); font-size:1.03rem; }
-    .actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:32px; }
-    .button { display:inline-flex; align-items:center; gap:9px; border:1px solid var(--accent); border-radius:8px; padding:13px 19px; font-weight:800; font-size:.9rem; transition:.2s ease; }
-    .button.primary { background:var(--accent); color:#1b1400; }
-    .button:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(232,189,69,.2); }
-    .button.secondary { color:var(--accent); }
-    .hero-card { position:relative; max-width:390px; justify-self:end; width:100%; }
-    .hero-card::before { content:""; position:absolute; inset:-18px 20px 24px -18px; border:1px solid rgba(232,189,69,.42); border-radius:22px; z-index:-1; }
-    .portrait { aspect-ratio:4/5; overflow:hidden; border-radius:18px; background:linear-gradient(145deg,#3b2d0b,#111 58%,#654b0a); border:1px solid rgba(255,255,255,.12); display:grid; place-items:center; }
-    .portrait img { width:100%; height:100%; object-fit:cover; display:block; }
-    .portrait-fallback { font-family:"Space Grotesk",sans-serif; font-size:6rem; font-weight:700; color:rgba(255,255,255,.87); }
-    .availability { position:absolute; bottom:20px; left:-25px; background:#f7e4a7; color:#201600; border-radius:10px; padding:10px 13px; box-shadow:0 12px 28px rgba(0,0,0,.38); font-size:.78rem; font-weight:800; }
-    .availability i { color:#a56e00; margin-right:5px; }
-    section { padding:104px 0; }
-    .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:42px; }
-    .section-head h2 { font-size:clamp(2.1rem,4vw,3.3rem); letter-spacing:-.05em; margin-top:9px; }
-    .section-copy { max-width:500px; color:var(--muted); }
-    .about-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:28px; }
-    .panel { background:linear-gradient(140deg,#191714,#101010); border:1px solid var(--line); border-radius:14px; padding:30px; }
-    .panel p { color:var(--muted); }
-    .facts { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
-    .fact { padding:26px; background:var(--panel); }
-    .fact i { color:var(--accent); font-size:1.2rem; margin-bottom:14px; }
-    .fact strong { display:block; font-size:.93rem; }
-    .fact span { display:block; font-size:.83rem; color:var(--muted); margin-top:3px; }
-    .skills { display:grid; grid-template-columns:repeat(5,1fr); gap:13px; }
-    .skill { min-height:140px; padding:21px; background:var(--panel); border:1px solid var(--line); border-radius:12px; display:flex; flex-direction:column; justify-content:space-between; transition:.22s ease; }
-    .skill:hover { border-color:var(--accent); background:var(--panel-2); transform:translateY(-5px); }
-    .skill i { color:var(--accent); font-size:1.35rem; }
-    .skill span { font-weight:800; line-height:1.3; }
-    .projects { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-    .project { padding:32px; background:var(--panel); border:1px solid var(--line); border-radius:14px; position:relative; overflow:hidden; }
-    .project::after { content:""; width:120px; height:120px; position:absolute; right:-45px; top:-45px; background:radial-gradient(circle,rgba(232,189,69,.2),transparent 68%); }
-    .project-icon { color:var(--accent); font-size:1.35rem; margin-bottom:38px; }
-    .project h3 { font-size:1.3rem; margin-bottom:11px; }
-    .project p { color:var(--muted); font-size:.94rem; }
-    .contact { background:linear-gradient(120deg,#1e180b,#0b0b0b 64%); border-top:1px solid var(--line); }
-    .contact-grid { display:grid; grid-template-columns:1fr .9fr; gap:40px; align-items:start; }
-    .contact h2 { font-size:clamp(2.3rem,4vw,3.5rem); letter-spacing:-.06em; margin:10px 0 18px; }
-    .contact p { color:#c8c0b0; max-width:580px; }
-    .contact-cards { display:grid; gap:11px; }
-    .contact-card { padding:16px 18px; display:flex; align-items:center; gap:14px; border-radius:10px; background:rgba(0,0,0,.48); border:1px solid rgba(255,255,255,.11); }
-    .contact-card i { width:20px; color:var(--accent); text-align:center; }
-    .contact-card div { min-width:0; }
-    .contact-card small { display:block; color:#b9aa88; font-weight:700; font-size:.72rem; }
-    .contact-card a, .contact-card span { font-weight:700; word-break:break-word; }
-    footer { padding:27px 0; color:var(--muted); font-size:.84rem; }
-    .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
-    .social { display:flex; gap:10px; }
-    .social a { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); transition:.2s; }
-    .social a:hover { color:var(--accent); border-color:var(--accent); }
-    .whatsapp { position:fixed; right:24px; bottom:24px; width:54px; height:54px; display:grid; place-items:center; border-radius:50%; background:var(--accent); color:#171100; font-size:1.65rem; box-shadow:0 10px 26px rgba(0,0,0,.48); z-index:15; transition:.2s; }
-    .whatsapp:hover { transform:scale(1.08); }
-    @media (max-width:850px) { .hero { grid-template-columns:1fr; gap:45px; padding:62px 0 76px; } .hero-card { justify-self:start; max-width:310px; order:-1; } .about-grid,.contact-grid { grid-template-columns:1fr; } .skills { grid-template-columns:repeat(3,1fr); } }
-    @media (max-width:600px) { .shell { width:min(100% - 32px,1140px); } .nav-inner { min-height:64px; } .menu { display:block; } .nav-links { display:none; position:absolute; left:16px; right:16px; top:60px; flex-direction:column; gap:0; padding:9px 18px; background:#15120b; border:1px solid var(--line); border-radius:10px; } .nav-links.open { display:flex; } .nav-links a { display:block; padding:12px 0; } .hero { min-height:auto; } h1 { font-size:3.15rem; } section { padding:74px 0; } .section-head { display:block; margin-bottom:29px; } .section-copy { margin-top:15px; } .skills { grid-template-columns:repeat(2,1fr); } .skill { min-height:118px; } .projects { grid-template-columns:1fr; } .facts { grid-template-columns:1fr; } .availability { left:-9px; bottom:14px; } .footer-inner { flex-direction:column; align-items:flex-start; } }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sharoj Kumar | MR.BLACK | IT & CCTV Engineer</title>
+
+<meta name="description"
+content="Sharoj Kumar (MR.BLACK) - IT Support, Networking & CCTV Engineer with 10+ years of experience in Saudi Arabia, Malaysia and India.">
+
+<meta name="keywords"
+content="Sharoj Kumar, MR.BLACK, CCTV Engineer, IT Support, Network Engineer, Saudi Arabia, Hikvision, Dahua, Fiber Optic">
+
+<meta name="author" content="Sharoj Kumar">
+
+<meta name="robots" content="index,follow">
+
+<link rel="icon" href="favicon.ico">
+
+<meta property="og:title"
+content="Sharoj Kumar | MR.BLACK">
+
+<meta property="og:description"
+content="Professional IT, Networking & CCTV Engineer">
+
+<meta property="og:image"
+content="profile.jpg">
+
+<meta property="og:type"
+content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:#090909;
+color:white;
+
+}
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#111;
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+color:#FFD700;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:#FFD700;
+
+}
+
+.hero{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:0 8%;
+gap:70px;
+
+}
+
+.hero img{
+
+width:340px;
+border-radius:20px;
+box-shadow:0 0 40px gold;
+
+}
+
+.hero-text h3{
+
+color:#FFD700;
+
+}
+
+.hero-text h1{
+
+font-size:58px;
+
+}
+
+.hero-text p{
+
+margin-top:20px;
+line-height:32px;
+color:#cccccc;
+
+}
+
+.btn{
+
+display:inline-block;
+margin-top:25px;
+padding:14px 35px;
+background:#FFD700;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+
+}
+
+.btn:hover{
+
+background:white;
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header class="nav">
-    <div class="shell nav-inner">
-      <a class="brand" href="#home">SHAROJKUMAR<span>.</span></a>
-      <button class="menu" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
 
-  <main>
-    <section class="shell hero" id="home">
-      <div>
-        <p class="eyebrow">IT infrastructure & surveillance</p>
-        <h1>Keeping your <em>technology</em> connected.</h1>
-        <p class="role"><span id="typing">IT / Network Support Engineer</span><span class="cursor"></span></p>
-        <p class="intro">I’m Sharoj Kumar, an IT professional focused on reliable networks, CCTV surveillance, IP camera systems and practical technical support.</p>
-        <div class="actions">
-          <a class="button primary" href="SK_RESUME.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> Download résumé</a>
-          <a class="button secondary" href="#contact">Let’s connect <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="portrait"><img src="profile.jpg" alt="Portrait of Sharoj Kumar" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="portrait-fallback" style="display:none">SK</span></div>
-        <div class="availability"><i class="fa-solid fa-circle"></i> Available for opportunities</div>
-      </div>
-    </section>
+<header>
 
-    <section id="about"><div class="shell">
-      <div class="section-head"><div><p class="eyebrow">01 — About</p><h2>Hands-on support for essential systems.</h2></div><p class="section-copy">I help organisations keep their networks, security systems and day-to-day IT operations dependable.</p></div>
-      <div class="about-grid"><div class="panel"><p>I am an IT / Network Support & CCTV Engineer with practical experience in network troubleshooting, CCTV systems, IP camera configuration, PoE switches, structured cabling, fibre optic connectivity, NVR/DVR management and technical support.</p><br><p>My focus is simple: secure, reliable and efficient technology solutions that work when people need them.</p></div><div class="facts"><div class="fact"><i class="fa-solid fa-network-wired"></i><strong>Network support</strong><span>LAN, routers, switches & troubleshooting</span></div><div class="fact"><i class="fa-solid fa-video"></i><strong>CCTV systems</strong><span>IP cameras, NVR/DVR & surveillance</span></div><div class="fact"><i class="fa-solid fa-ethernet"></i><strong>Connectivity</strong><span>Structured cabling & fibre optics</span></div><div class="fact"><i class="fa-solid fa-screwdriver-wrench"></i><strong>Technical support</strong><span>Windows, printers & maintenance</span></div></div></div>
-    </div></section>
+<div class="logo">
 
-    <section id="skills"><div class="shell">
-      <div class="section-head"><div><p class="eyebrow">02 — Expertise</p><h2>Skills I bring to the field.</h2></div></div>
-      <div class="skills"><div class="skill"><i class="fa-solid fa-headset"></i><span>IT Support</span></div><div class="skill"><i class="fa-solid fa-network-wired"></i><span>Network Support</span></div><div class="skill"><i class="fa-solid fa-video"></i><span>CCTV Installation</span></div><div class="skill"><i class="fa-solid fa-camera"></i><span>IP Cameras</span></div><div class="skill"><i class="fa-solid fa-hard-drive"></i><span>NVR / DVR</span></div><div class="skill"><i class="fa-solid fa-tower-broadcast"></i><span>Fibre Optic</span></div><div class="skill"><i class="fa-solid fa-toggle-on"></i><span>PoE Switches</span></div><div class="skill"><i class="fa-brands fa-windows"></i><span>Windows Support</span></div><div class="skill"><i class="fa-solid fa-wrench"></i><span>Troubleshooting</span></div><div class="skill"><i class="fa-solid fa-plug-circle-bolt"></i><span>Structured Cabling</span></div></div>
-    </div></section>
+MR.BLACK
 
-    <section id="projects"><div class="shell">
-      <div class="section-head"><div><p class="eyebrow">03 — Work areas</p><h2>Solutions that keep work moving.</h2></div><p class="section-copy">A snapshot of the systems and services I support.</p></div>
-      <div class="projects"><article class="project"><i class="project-icon fa-solid fa-video"></i><h3>CCTV installation</h3><p>Installation and configuration of IP CCTV cameras, NVR/DVR systems, PoE switches and surveillance networks.</p></article><article class="project"><i class="project-icon fa-solid fa-network-wired"></i><h3>Network infrastructure</h3><p>LAN setup, router and switch configuration, structured cabling, VLANs and network troubleshooting.</p></article><article class="project"><i class="project-icon fa-solid fa-tower-broadcast"></i><h3>Fibre optic connectivity</h3><p>Fibre optic cable installation, testing, maintenance and connectivity for enterprise networks.</p></article><article class="project"><i class="project-icon fa-solid fa-desktop"></i><h3>Technical support</h3><p>Windows installation, system maintenance, printer support and responsive IT troubleshooting.</p></article></div>
-    </div></section>
+</div>
 
-    <section class="contact" id="contact"><div class="shell contact-grid">
-      <div><p class="eyebrow">04 — Contact</p><h2>Have a system that needs support?</h2><p>Get in touch for IT, networking and CCTV-related opportunities or enquiries.</p><div class="actions"><a class="button primary" href="mailto:sharojkumar007@gmail.com"><i class="fa-solid fa-paper-plane"></i> Send an email</a></div></div>
-      <div class="contact-cards"><div class="contact-card"><i class="fa-solid fa-envelope"></i><div><small>EMAIL</small><a href="mailto:sharojkumar007@gmail.com">sharojkumar007@gmail.com</a></div></div><div class="contact-card"><i class="fa-solid fa-phone"></i><div><small>PHONE / WHATSAPP</small><a href="https://wa.me/918754440447" target="_blank" rel="noopener">+91 87544 40447</a></div></div><div class="contact-card"><i class="fa-solid fa-location-dot"></i><div><small>LOCATION</small><a href="https://maps.app.goo.gl/NUKxEV9Hx2hoXhxQ9" target="_blank" rel="noopener">India</a></div></div><div class="contact-card"><i class="fa-brands fa-linkedin-in"></i><div><small>LINKEDIN</small><a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" rel="noopener">linkedin.com/in/sharojkumar007</a></div></div></div>
-    </div></section>
-  </main>
-  <footer><div class="shell footer-inner"><span>© <span id="year"></span> MR.BLACK. All rights reserved.</span><div class="social"><a href="https://github.com/SharojKumar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/sharojkumar007" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://instagram.com/mrblack_sk" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div></footer>
-  <a class="whatsapp" href="https://wa.me/918754440447" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <script>
-    const roles = ['IT / Network Support Engineer', 'CCTV Surveillance Specialist', 'IP Camera & Infrastructure Expert'];
-    const typing = document.getElementById('typing'); let role = 0, char = 0, erasing = false;
-    function typeRole() { const word = roles[role]; typing.textContent = erasing ? word.slice(0, --char) : word.slice(0, ++char); let delay = erasing ? 35 : 70; if (!erasing && char === word.length) { delay = 1700; erasing = true; } else if (erasing && char === 0) { erasing = false; role = (role + 1) % roles.length; delay = 350; } setTimeout(typeRole, delay); }
-    setTimeout(typeRole, 900);
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const menu = document.querySelector('.menu'), links = document.querySelector('.nav-links'); menu.addEventListener('click', () => { const open = links.classList.toggle('open'); menu.setAttribute('aria-expanded', open); }); document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-  </script>
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#experience">Experience</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>Sharoj Kumar</h1>
+
+<h2 id="typing"></h2>
+
+<p>
+
+IT / Networking Support & CCTV Engineer
+
+with 10+ Years of Experience in
+
+Saudi Arabia, Malaysia and India.
+
+</p>
+
+<a href="SK_RESUME.pdf" class="btn">
+
+Download Resume
+
+</a>
+
+</div>
+
+<div>
+
+<img src="profile.jpg">
+
+</div>
+
+</section>
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="title">
+
+<h2>About Me</h2>
+
+<p>Who Am I</p>
+
+</div>
+
+<div class="about-box">
+
+<div class="about-left">
+
+<h3>Professional Profile</h3>
+
+<p>
+
+I'm <b>Sharoj Kumar (MR.BLACK)</b>, an experienced IT, Networking Support &
+CCTV Engineer with over <b>10+ years</b> of experience across
+India, Malaysia and Saudi Arabia.
+
+My expertise includes Enterprise Networking,
+IP CCTV Systems, Fiber Optic,
+Server Installation, Structured Cabling,
+Technical Support and Security Solutions.
+
+</p>
+
+<br>
+
+<p>
+
+I enjoy solving technical problems and delivering
+secure, reliable IT infrastructure for organizations.
+
+</p>
+
+</div>
+
+<div class="about-right">
+
+<div class="card">
+
+<h3>10+</h3>
+
+<p>Years Experience</p>
+
+</div>
+
+<div class="card">
+
+<h3>500+</h3>
+
+<p>CCTV Cameras Installed</p>
+
+</div>
+
+<div class="card">
+
+<h3>100+</h3>
+
+<p>Networks Configured</p>
+
+</div>
+
+<div class="card">
+
+<h3>24/7</h3>
+
+<p>Technical Support</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+<div class="container">
+
+<div class="title">
+
+<h2>Professional Experience</h2>
+
+<p>Career Timeline</p>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>2023 - Present</h3>
+
+<h4>Al-SAIF Group (Saudi Arabia)</h4>
+
+<p>IT / Networking Support & CCTV Engineer</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>2018 - 2023</h3>
+
+<h4>MR.BLACK SECURE SOLUTIONS</h4>
+
+<p>Founder & Owner</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>2016 - 2018</h3>
+
+<h4>Kingsley International School (Malaysia)</h4>
+
+<p>IT Supervisor</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>2015 - 2016</h3>
+
+<h4>Airtel India</h4>
+
+<p>Customer Sales Officer (CSO)</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>2014 - 2015</h3>
+
+<h4>Royal Enfield</h4>
+
+<p>Technician</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.container{
+
+width:90%;
+
+margin:auto;
+
+padding:100px 0;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.title h2{
+
+font-size:40px;
+
+color:#FFD700;
+
+}
+
+.title p{
+
+color:#aaa;
+
+}
+
+.about-box{
+
+display:flex;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+.about-left{
+
+flex:1;
+
+min-width:320px;
+
+}
+
+.about-left p{
+
+line-height:32px;
+
+color:#ddd;
+
+}
+
+.about-right{
+
+flex:1;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.card{
+
+background:#161616;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.4s;
+
+border:1px solid #222;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 20px gold;
+
+}
+
+.card h3{
+
+font-size:38px;
+
+color:#FFD700;
+
+margin-bottom:10px;
+
+}
+
+.timeline{
+
+border-left:3px solid gold;
+
+padding-left:30px;
+
+}
+
+.timeline-item{
+
+margin-bottom:40px;
+
+background:#161616;
+
+padding:20px;
+
+border-radius:10px;
+
+transition:.4s;
+
+}
+
+.timeline-item:hover{
+
+transform:translateX(10px);
+
+box-shadow:0 0 20px rgba(255,215,0,.4);
+
+}
+
+.timeline-item h3{
+
+color:#FFD700;
+
+margin-bottom:10px;
+
+}
+
+.timeline-item h4{
+
+margin-bottom:10px;
+
+}
+
+.timeline-item p{
+
+color:#ccc;
+
+}
+
+</style>
+<!-- ================= SKILLS SECTION ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="title">
+
+<h2>My Skills</h2>
+
+<p>Professional Expertise</p>
+
+</div>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<i class="fas fa-network-wired"></i>
+<h3>Networking</h3>
+<div class="bar"><span style="width:95%"></span></div>
+<p>95%</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-video"></i>
+<h3>CCTV Installation</h3>
+<div class="bar"><span style="width:98%"></span></div>
+<p>98%</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-server"></i>
+<h3>Server Support</h3>
+<div class="bar"><span style="width:90%"></span></div>
+<p>90%</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-wifi"></i>
+<h3>WiFi & Routing</h3>
+<div class="bar"><span style="width:92%"></span></div>
+<p>92%</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-ethernet"></i>
+<h3>Fiber Optic</h3>
+<div class="bar"><span style="width:95%"></span></div>
+<p>95%</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-tools"></i>
+<h3>Technical Support</h3>
+<div class="bar"><span style="width:97%"></span></div>
+<p>97%</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<h2>Services</h2>
+
+<p>What I Can Do</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<i class="fas fa-video"></i>
+<h3>CCTV Installation</h3>
+<p>Professional installation of IP Cameras, NVR, DVR and surveillance systems.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-network-wired"></i>
+<h3>Network Infrastructure</h3>
+<p>LAN, WAN, Switches, Routers, Structured Cabling and VLAN configuration.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-server"></i>
+<h3>Server Support</h3>
+<p>Windows Server setup, maintenance and enterprise IT infrastructure support.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-shield-alt"></i>
+<h3>Security Solutions</h3>
+<p>Enterprise CCTV security planning and monitoring solutions.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-headset"></i>
+<h3>IT Support</h3>
+<p>Desktop, Laptop, Printer, Software and Hardware troubleshooting.</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-broadcast-tower"></i>
+<h3>Fiber Solutions</h3>
+<p>Fiber optic installation, splicing and testing.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="title">
+
+<h2>Projects</h2>
+
+<p>Recent Work</p>
+
+</div>
+
+<div class="project-grid">
+
+<div class="project-card">
+<img src="project1.jpg">
+<h3>CCTV Installation</h3>
+<p>Enterprise CCTV deployment with Hikvision IP Cameras.</p>
+</div>
+
+<div class="project-card">
+<img src="project2.jpg">
+<h3>Network Infrastructure</h3>
+<p>Office LAN, Structured Cabling & Switch Configuration.</p>
+</div>
+
+<div class="project-card">
+<img src="project3.jpg">
+<h3>Fiber Optic</h3>
+<p>Fiber cable installation and connectivity testing.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.skills-grid,
+.service-grid,
+.project-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+
+}
+
+.skill-card,
+.service-card,
+.project-card{
+
+background:#171717;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.4s;
+border:1px solid #333;
+
+}
+
+.skill-card:hover,
+.service-card:hover,
+.project-card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 0 25px gold;
+
+}
+
+.skill-card i,
+.service-card i{
+
+font-size:45px;
+color:#FFD700;
+margin-bottom:20px;
+
+}
+
+.bar{
+
+height:8px;
+background:#333;
+border-radius:50px;
+margin:20px 0;
+
+}
+
+.bar span{
+
+display:block;
+height:100%;
+background:#FFD700;
+border-radius:50px;
+
+}
+
+.project-card img{
+
+width:100%;
+border-radius:10px;
+margin-bottom:20px;
+
+}
+
+</style>
+<!-- ================= CERTIFICATES ================= -->
+
+<section id="certificates">
+
+<div class="container">
+
+<div class="title">
+<h2>Certificates</h2>
+<p>Professional Achievements</p>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<i class="fas fa-award"></i>
+<h3>Networking</h3>
+<p>Enterprise Networking & Infrastructure</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-certificate"></i>
+<h3>CCTV Systems</h3>
+<p>IP Camera Installation & Configuration</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-medal"></i>
+<h3>Technical Support</h3>
+<p>IT Hardware & Software Support</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="title">
+<h2>Contact Me</h2>
+<p>Let's Work Together</p>
+</div>
+
+<div class="contact-box">
+
+<div class="contact-info">
+
+<h3>Get In Touch</h3>
+
+<p><i class="fas fa-user"></i> Sharoj Kumar (MR.BLACK)</p>
+
+<p><i class="fas fa-envelope"></i>
+sharojkumar007@gmail.com
+</p>
+
+<p><i class="fas fa-phone"></i>
++91 87544 40447
+</p>
+
+<p><i class="fas fa-map-marker-alt"></i>
+Saudi Arabia / India
+</p>
+
+<a class="resume-btn" href="SK_RESUME.pdf" download>
+<i class="fas fa-download"></i>
+Download Resume
+</a>
+
+</div>
+
+<div class="contact-form">
+
+<form>
+
+<input type="text"
+placeholder="Your Name"
+required>
+
+<input type="email"
+placeholder="Your Email"
+required>
+
+<input type="text"
+placeholder="Subject">
+
+<textarea rows="6"
+placeholder="Your Message"></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MAP ================= -->
+
+<section>
+
+<iframe
+
+src="https://www.google.com/maps?q=Saudi+Arabia&output=embed"
+
+width="100%"
+
+height="400"
+
+style="border:0;">
+
+</iframe>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h3>Sharoj Kumar (MR.BLACK)</h3>
+
+<p>
+
+IT | Networking | CCTV Engineer
+
+</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+</div>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+<!-- WhatsApp Floating Button -->
+
+<a href="https://wa.me/918754440447"
+
+class="whatsapp"
+
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- Back To Top -->
+
+<a href="#home"
+
+class="top-btn">
+
+<i class="fas fa-arrow-up"></i>
+
+</a>
+
+<style>
+
+.contact-box{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:40px;
+
+}
+
+.contact-info{
+
+background:#181818;
+
+padding:30px;
+
+border-radius:15px;
+
+}
+
+.contact-info p{
+
+margin:20px 0;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+width:100%;
+
+padding:15px;
+
+margin-bottom:15px;
+
+background:#222;
+
+color:#fff;
+
+border:none;
+
+border-radius:10px;
+
+}
+
+.contact-form button,
+.resume-btn{
+
+background:#FFD700;
+
+color:#000;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:10px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+text-decoration:none;
+
+display:inline-block;
+
+margin-top:10px;
+
+}
+
+footer{
+
+padding:40px;
+
+background:#111;
+
+text-align:center;
+
+}
+
+.social a{
+
+margin:10px;
+
+font-size:24px;
+
+color:#FFD700;
+
+}
+
+.whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:60px;
+
+height:60px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+z-index:999;
+
+}
+
+.top-btn{
+
+position:fixed;
+
+bottom:100px;
+
+right:30px;
+
+width:50px;
+
+height:50px;
+
+background:#FFD700;
+
+color:black;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+text-decoration:none;
+
+font-size:20px;
+
+}
+
+</style>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// Typing Animation
+
+const words = [
+"IT / Networking Support Engineer",
+"CCTV Engineer",
+"Fiber Optic Specialist",
+"Technical Support Engineer"
+];
+
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+if(isDeleting){
+
+document.getElementById("typing").innerHTML=current.substring(0,j--);
+
+}else{
+
+document.getElementById("typing").innerHTML=current.substring(0,j++);
+
+}
+
+if(!isDeleting && j==current.length+1){
+
+isDeleting=true;
+
+setTimeout(type,1500);
+
+return;
+
+}
+
+if(isDeleting && j===0){
+
+isDeleting=false;
+
+i++;
+
+if(i===words.length){
+
+i=0;
+
+}
+
+}
+
+setTimeout(type,isDeleting?60:120);
+
+}
+
+type();
+
+
+// Scroll Animation
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(sec=>{
+
+observer.observe(sec);
+
+});
+
+
+// Visitor Counter
+
+let count=localStorage.getItem("visitor");
+
+if(count==null){
+
+count=1;
+
+}else{
+
+count++;
+
+}
+
+localStorage.setItem("visitor",count);
+
+console.log("Visitors :",count);
+
+
+// Back To Top
+
+window.addEventListener("scroll",()=>{
+
+let btn=document.querySelector(".top-btn");
+
+if(window.scrollY>300){
+
+btn.style.display="flex";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+});
+
+</script>
+
+<!-- ================= SCHEMA SEO ================= -->
+
+<script type="application/ld+json">
+
+{
+
+"@context":"https://schema.org",
+
+"@type":"Person",
+
+"name":"Sharoj Kumar",
+
+"alternateName":"MR.BLACK",
+
+"jobTitle":"IT / Networking Support & CCTV Engineer",
+
+"url":"https://sharojkumar.github.io",
+
+"image":"profile.jpg",
+
+"email":"mailto:sharojkumar007@gmail.com",
+
+"telephone":"+918754440447",
+
+"sameAs":[
+
+"https://www.linkedin.com/in/sharojkumar007",
+
+"https://github.com/SharojKumar",
+
+"https://instagram.com/mrblack_secure_solutions"
+
+],
+
+"address":{
+
+"@type":"PostalAddress",
+
+"addressCountry":"Saudi Arabia"
+
+},
+
+"knowsAbout":[
+
+"CCTV",
+
+"Networking",
+
+"Fiber Optic",
+
+"IT Support",
+
+"Windows",
+
+"Hikvision",
+
+"Dahua"
+
+]
+
+}
+
+</script>
+
 </body>
+
 </html>
