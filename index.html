@@ -690,11 +690,14 @@ Download Resume
 </a>
 </div>
 <div class="contact-form">
-<form>
-<input placeholder="Your Name" required="" type="text"/>
-<input placeholder="Your Email" required="" type="email"/>
-<input placeholder="Subject" type="text"/>
-<textarea placeholder="Your Message" rows="6"></textarea>
+<form action="https://formsubmit.co/sharojkumar007@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Message from Portfolio Website">
+<input type="hidden" name="_next" value="https://sharojkumar.github.io/">
+<input name="Name" placeholder="Your Name" required="" type="text"/>
+<input name="Email" placeholder="Your Email" required="" type="email"/>
+<input name="Subject" placeholder="Subject" type="text"/>
+<textarea name="Message" placeholder="Your Message" rows="6" required></textarea>
 <button type="submit">
 Send Message
 </button>
