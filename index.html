@@ -131,9 +131,9 @@
     .timeline-date { color: var(--gold); font-size: .82rem; font-weight: 600; }
     .timeline-item h3 { margin: 5px 0 4px; font-size: 1.08rem; }
     .timeline-item p { color: var(--muted); font-size: .92rem; }
-    /* Skills, services and projects */
+    /* Skills, services, projects & certificates */
     .cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
-    .skill-card, .service-card, .project-card, .cert-card { padding: 27px; min-width: 0; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
+    .skill-card, .service-card, .project-card, .cert-card { padding: 22px; min-width: 0; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
     .skill-card:hover, .service-card:hover, .project-card:hover, .cert-card:hover { transform: translateY(-7px); border-color: rgba(255,215,0,.38); box-shadow: 0 18px 45px rgba(0,0,0,.38), 0 0 25px rgba(255,215,0,.045); background: #171717; }
     .card-icon { width: 53px; height: 53px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 15px; color: var(--gold); background: rgba(255,215,0,.07); font-size: 1.35rem; margin-bottom: 18px; }
     .skill-card h3, .service-card h3, .project-card h3, .cert-card h3 { font-size: 1.02rem; margin-bottom: 9px; }
@@ -143,8 +143,14 @@
     .skill-card.animated .skill-meter span { width: var(--level); }
     .skill-percent { color: var(--gold); font-size: .76rem; text-align: right; margin-top: 7px; }
     .project-icon { width: 62px; height: 62px; display: grid; place-items: center; color: #090909; background: var(--gold); border-radius: 18px; font-size: 1.5rem; margin-bottom: 19px; box-shadow: 0 8px 24px rgba(255,215,0,.1); }
-    .project-tag { display: inline-block; margin-top: 18px; color: var(--gold); border: 1px solid var(--border); background: rgba(255,215,0,.05); border-radius: 99px; padding: 5px 10px; font-size: .72rem; }
-    /* Certificates and contact */
+    .project-tag { display: inline-block; margin-top: 14px; color: var(--gold); border: 1px solid var(--border); background: rgba(255,215,0,.05); border-radius: 99px; padding: 5px 10px; font-size: .72rem; }
+    
+    /* Certificate Image Styling */
+    .cert-img-wrap { width: 100%; aspect-ratio: 16/11; border-radius: 12px; overflow: hidden; margin-bottom: 15px; border: 1px solid var(--border); background: #000; }
+    .cert-img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+    .cert-card:hover .cert-img { transform: scale(1.04); }
+
+    /* Contact */
     .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: stretch; }
     .contact-info, .contact-form { padding: clamp(23px, 4vw, 34px); }
     .contact-info h3, .contact-form h3 { font-size: 1.25rem; margin-bottom: 18px; }
@@ -358,45 +364,93 @@
 
     <section class="section" id="certificates">
       <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Qualifications &amp; Certifications</span><h2>Certificates &amp; <span>Awards</span></h2><p>Academic degrees and technical certifications</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">Qualifications &amp; Certifications</span><h2>Certificates &amp; <span>Awards</span></h2><p>Academic degrees, work experience letters, and technical certifications</p></div>
         <div class="cards-grid">
+
+          <!-- Hikvision CGSP -->
           <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+            <a href="Hikvision.pdf" target="_blank" aria-label="View Hikvision Certificate">
+              <div class="cert-img-wrap" style="display:grid; place-items:center; background:#111;">
+                <i class="fa-solid fa-file-pdf" style="font-size: 3rem; color: var(--gold);"></i>
+              </div>
+            </a>
             <h3>CGSP-CCTV Certification</h3>
-            <p><strong>Hikvision</strong><br>Certified General Security Professional (CGSP-CCTV) valid thru Sep 2031 (Cert No: CGSP-092026-0091-12-1058).</p>
+            <p><strong>Hikvision</strong><br>Certified General Security Professional (CGSP-CCTV) valid thru Sep 2031.</p>
             <span class="project-tag">Security &amp; CCTV</span>
           </article>
-          <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
-            <h3>Diploma in Computer Science Engg</h3>
-            <p><strong>St. Michael's Polytechnic College</strong><br>3 Years Full-Time Diploma Course completed under Govt of Tamil Nadu (2009 - 2012).</p>
-            <span class="project-tag">College Education</span>
-          </article>
-          <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
-            <h3>Honours Diploma in Hardware &amp; Networking</h3>
-            <p><strong>TNIT (Recognized by Ministry of Labour, Govt of India)</strong><br>Passed with 'A' Grade in Hardware &amp; Networking (2016).</p>
-            <span class="project-tag">Technical Diploma</span>
-          </article>
-          <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-desktop" aria-hidden="true"></i></div>
-            <h3>Honours Diploma in Hardware &amp; Networking</h3>
-            <p><strong>CSC-IEC Hardware &amp; Networking</strong><br>Parrys Centre certification passed with 'A' Grade (2008 - 2009).</p>
-            <span class="project-tag">Technical Diploma</span>
-          </article>
-          <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
-            <h3>B2B Sales Certification Program</h3>
-            <p><strong>Bharti Airtel</strong><br>Training Completion Certificate in B2B sales final certification program (July 2018).</p>
 
-            <span class="project-tag">Corporate Training</span>
-          </article>
+          <!-- D CSE -->
           <article class="panel cert-card reveal">
-            <div class="card-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-            <h3>Retail Training Programme</h3>
-            <p><strong>Bharti Airtel &amp; Centum Learning</strong><br>Retail Training Programme completed at Chennai with a score of 83% (June - July 2018).</p>
-            <span class="project-tag">Professional Training</span>
+            <a href="D%20CSE.jpg" target="_blank" aria-label="View Diploma Certificate">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="D%20CSE.jpg" alt="Diploma in Computer Science Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>Diploma in Computer Science Engg</h3>
+            <p><strong>St. Michael's Polytechnic College</strong><br>3 Years Diploma Course completed under Govt of Tamil Nadu (2009 - 2012).</p>
+            <span class="project-tag">College Degree</span>
           </article>
+
+          <!-- TNIT -->
+          <article class="panel cert-card reveal">
+            <a href="TNIT%20COMPUTER.jpg" target="_blank" aria-label="View TNIT Certificate">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="TNIT%20COMPUTER.jpg" alt="TNIT Hardware & Networking Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>Honours Diploma (TNIT)</h3>
+            <p><strong>Tamilnadu Institute of Technology</strong><br>Hardware &amp; Networking Diploma passed with 'A' Grade (2016).</p>
+            <span class="project-tag">Hardware &amp; Networking</span>
+          </article>
+
+          <!-- CSC Certificate -->
+          <article class="panel cert-card reveal">
+            <a href="CSC%20Cetficate.jpg" target="_blank" aria-label="View CSC Certificate">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="CSC%20Cetficate.jpg" alt="CSC Hardware & Networking Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>Honours Diploma (CSC-IEC)</h3>
+            <p><strong>CSC Computer Education</strong><br>Computer Hardware and Networking Course completed with Grade 'A' (2008 - 2009).</p>
+            <span class="project-tag">Hardware &amp; Networking</span>
+          </article>
+
+          <!-- Airtel B2B Sales -->
+          <article class="panel cert-card reveal">
+            <a href="Airtel%20B2B%20Sales.png" target="_blank" aria-label="View Airtel B2B Certificate">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="Airtel%20B2B%20Sales.png" alt="Airtel B2B Sales Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>B2B Sales Certification Program</h3>
+            <p><strong>Bharti Airtel</strong><br>Training Completion Certificate for B2B Sales Certification Program (July 2018).</p>
+            <span class="project-tag">Corporate Certification</span>
+          </article>
+
+          <!-- Airtel Retail -->
+          <article class="panel cert-card reveal">
+            <a href="Airtel%20B2B.jpg" target="_blank" aria-label="View Airtel Retail Certificate">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="Airtel%20B2B.jpg" alt="Airtel Retail Training Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>Retail Training Programme</h3>
+            <p><strong>Bharti Airtel &amp; Centum Learning</strong><br>Retail Training Programme with 83% score at Chennai (2018).</p>
+            <span class="project-tag">Retail &amp; Sales</span>
+          </article>
+
+          <!-- Royal Enfield Experience -->
+          <article class="panel cert-card reveal">
+            <a href="RF%20exp%20cf.png" target="_blank" aria-label="View Royal Enfield Experience Letter">
+              <div class="cert-img-wrap">
+                <img class="cert-img" src="RF%20exp%20cf.png" alt="Royal Enfield Service Certificate" loading="lazy">
+              </div>
+            </a>
+            <h3>Experience Certificate</h3>
+            <p><strong>Royal Enfield Ltd</strong><br>Official Relieving and Experience Certificate for Technician role (2012 - 2013).</p>
+            <span class="project-tag">Experience Letter</span>
+          </article>
+
         </div>
       </div>
     </section>
