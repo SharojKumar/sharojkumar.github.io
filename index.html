@@ -133,11 +133,11 @@
     .timeline-item p { color: var(--muted); font-size: .92rem; }
     /* Skills, services and projects */
     .cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
-    .skill-card, .service-card, .project-card { padding: 27px; min-width: 0; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
-    .skill-card:hover, .service-card:hover, .project-card:hover { transform: translateY(-7px); border-color: rgba(255,215,0,.38); box-shadow: 0 18px 45px rgba(0,0,0,.38), 0 0 25px rgba(255,215,0,.045); background: #171717; }
+    .skill-card, .service-card, .project-card, .cert-card { padding: 27px; min-width: 0; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
+    .skill-card:hover, .service-card:hover, .project-card:hover, .cert-card:hover { transform: translateY(-7px); border-color: rgba(255,215,0,.38); box-shadow: 0 18px 45px rgba(0,0,0,.38), 0 0 25px rgba(255,215,0,.045); background: #171717; }
     .card-icon { width: 53px; height: 53px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 15px; color: var(--gold); background: rgba(255,215,0,.07); font-size: 1.35rem; margin-bottom: 18px; }
-    .skill-card h3, .service-card h3, .project-card h3 { font-size: 1.02rem; margin-bottom: 9px; }
-    .skill-card p, .service-card p, .project-card p { color: var(--muted); font-size: .86rem; line-height: 1.8; }
+    .skill-card h3, .service-card h3, .project-card h3, .cert-card h3 { font-size: 1.02rem; margin-bottom: 9px; }
+    .skill-card p, .service-card p, .project-card p, .cert-card p { color: var(--muted); font-size: .86rem; line-height: 1.8; }
     .skill-meter { height: 5px; border-radius: 99px; background: #303030; margin-top: 19px; overflow: hidden; }
     .skill-meter span { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #b89100, var(--gold)); transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
     .skill-card.animated .skill-meter span { width: var(--level); }
@@ -225,7 +225,7 @@
       .timeline-item::before { left: -27px; }
       .timeline::before { left: 5px; }
       .cards-grid { gap: 14px; }
-      .skill-card, .service-card, .project-card { padding: 22px; }
+      .skill-card, .service-card, .project-card, .cert-card { padding: 22px; }
       .map-wrap iframe { height: 280px; }
     }
     @media (max-width: 480px) {
@@ -264,6 +264,7 @@
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -325,11 +326,77 @@
       <div class="container">
         <div class="section-heading reveal"><span class="eyebrow">Career journey</span><h2>Professional <span>Experience</span></h2><p>Work history across IT, networking, security and technical service</p></div>
         <div class="timeline">
-          <article class="timeline-item panel reveal"><span class="timeline-date">2023 – Present</span><h3>Al-SAIF Group <span class="muted">· Saudi Arabia</span></h3><p>IT / Networking Support &amp; CCTV Engineer</p></article>
-          <article class="timeline-item panel reveal"><span class="timeline-date">2018 – 2023</span><h3>Own Business <span class="muted">· India</span></h3><p>Founder &amp; Owner</p></article>
-          <article class="timeline-item panel reveal"><span class="timeline-date">2016 – 2018</span><h3>Kingsley International School <span class="muted">· Malaysia</span></h3><p>IT Supervisor</p></article>
-          <article class="timeline-item panel reveal"><span class="timeline-date">2015 – 2016</span><h3>Bharti Airtel <span class="muted">· India</span></h3><p>Customer Sales Officer (CSO)</p></article>
-          <article class="timeline-item panel reveal"><span class="timeline-date">2014 – 2015</span><h3>Royal Enfield <span class="muted">· India</span></h3><p>Technician</p></article>
+          <article class="timeline-item panel reveal">
+            <span class="timeline-date">2023 – Present</span>
+            <h3>Al-SAIF Group <span class="muted">· Saudi Arabia</span></h3>
+            <p><strong>IT / Networking Support &amp; CCTV Engineer</strong></p>
+          </article>
+          <article class="timeline-item panel reveal">
+            <span class="timeline-date">2018 – 2023</span>
+            <h3>Own Business (MR.BLACK SECURE SOLUTIONS) <span class="muted">· India</span></h3>
+            <p><strong>Founder &amp; Owner</strong></p>
+          </article>
+          <article class="timeline-item panel reveal">
+            <span class="timeline-date">2016 – 2018</span>
+            <h3>Kingsley International School <span class="muted">· Malaysia</span></h3>
+            <p><strong>IT Supervisor</strong></p>
+          </article>
+          <article class="timeline-item panel reveal">
+            <span class="timeline-date">2015 – 2018</span>
+            <h3>Bharti Airtel <span class="muted">· India</span></h3>
+            <p><strong>Customer Sales Officer (CSO) &amp; B2B Executive</strong></p>
+            <p class="muted" style="font-size:0.85rem; margin-top:4px;">Successfully completed Retail Training Programme (83% Score) &amp; B2B Sales Certification Program.</p>
+          </article>
+          <article class="timeline-item panel reveal">
+            <span class="timeline-date">2012 – 2013</span>
+            <h3>Royal Enfield (A Unit of Eicher Motors Ltd) <span class="muted">· India</span></h3>
+            <p><strong>Technician (Feb 2012 – Dec 2013)</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Qualifications &amp; Certifications</span><h2>Certificates &amp; <span>Awards</span></h2><p>Academic degrees and technical certifications</p></div>
+        <div class="cards-grid">
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+            <h3>CGSP-CCTV Certification</h3>
+            <p><strong>Hikvision</strong><br>Certified General Security Professional (CGSP-CCTV) valid thru Sep 2031 (Cert No: CGSP-092026-0091-12-1058).</p>
+            <span class="project-tag">Security &amp; CCTV</span>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <h3>Diploma in Computer Science Engg</h3>
+            <p><strong>St. Michael's Polytechnic College</strong><br>3 Years Full-Time Diploma Course completed under Govt of Tamil Nadu (2009 - 2012).</p>
+            <span class="project-tag">College Education</span>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+            <h3>Honours Diploma in Hardware &amp; Networking</h3>
+            <p><strong>TNIT (Recognized by Ministry of Labour, Govt of India)</strong><br>Passed with 'A' Grade in Hardware &amp; Networking (2016).</p>
+            <span class="project-tag">Technical Diploma</span>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-desktop" aria-hidden="true"></i></div>
+            <h3>Honours Diploma in Hardware &amp; Networking</h3>
+            <p><strong>CSC-IEC Hardware &amp; Networking</strong><br>Parrys Centre certification passed with 'A' Grade (2008 - 2009).</p>
+            <span class="project-tag">Technical Diploma</span>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+            <h3>B2B Sales Certification Program</h3>
+            <p><strong>Bharti Airtel</strong><br>Training Completion Certificate in B2B sales final certification program (July 2018).</p>
+
+            <span class="project-tag">Corporate Training</span>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="card-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+            <h3>Retail Training Programme</h3>
+            <p><strong>Bharti Airtel &amp; Centum Learning</strong><br>Retail Training Programme completed at Chennai with a score of 83% (June - July 2018).</p>
+            <span class="project-tag">Professional Training</span>
+          </article>
         </div>
       </div>
     </section>
@@ -369,17 +436,6 @@
           <article class="panel project-card reveal"><div class="project-icon"><i class="fa-solid fa-video" aria-hidden="true"></i></div><h3>CCTV Installation</h3><p>IP camera deployment, camera configuration, NVR integration and surveillance troubleshooting.</p><span class="project-tag">IP CCTV · NVR · Security</span></article>
           <article class="panel project-card reveal"><div class="project-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div><h3>Network Infrastructure</h3><p>Office LAN connectivity, structured cabling, switch configuration and network fault isolation.</p><span class="project-tag">LAN · Switching · Cabling</span></article>
           <article class="panel project-card reveal"><div class="project-icon"><i class="fa-solid fa-ethernet" aria-hidden="true"></i></div><h3>Fiber Optic Connectivity</h3><p>Fiber cable route support, link checks and coordination for network restoration work.</p><span class="project-tag">Fiber · Connectivity · Support</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="certificates">
-      <div class="container">
-        <div class="section-heading reveal"><span class="eyebrow">Professional strengths</span><h2>Areas of <span>Expertise</span></h2><p>Core areas of practical technical work</p></div>
-        <div class="cards-grid">
-          <article class="panel service-card reveal"><div class="card-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div><h3>Networking &amp; Infrastructure</h3><p>Network connectivity, switching, cabling and infrastructure troubleshooting.</p></article>
-          <article class="panel service-card reveal"><div class="card-icon"><i class="fa-solid fa-camera" aria-hidden="true"></i></div><h3>CCTV Systems</h3><p>IP camera installation, configuration, recording and monitoring support.</p></article>
-          <article class="panel service-card reveal"><div class="card-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div><h3>Technical Support</h3><p>Hardware, software and end-user support with a troubleshooting mindset.</p></article>
         </div>
       </div>
     </section>
